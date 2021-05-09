@@ -13,6 +13,7 @@
 		49E010A22647C16F002B8E26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E010A02647C16F002B8E26 /* Main.storyboard */; };
 		49E010A42647C16F002B8E26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E010A32647C16F002B8E26 /* Assets.xcassets */; };
 		49E010A72647C16F002B8E26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E010A52647C16F002B8E26 /* LaunchScreen.storyboard */; };
+		49E010B42647CB04002B8E26 /* Palettes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E010B32647CB04002B8E26 /* Palettes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		49E010A32647C16F002B8E26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49E010A62647C16F002B8E26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49E010A82647C16F002B8E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49E010B32647CB04002B8E26 /* Palettes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palettes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				49E0109A2647C16F002B8E26 /* AppDelegate.swift */,
 				49E0109C2647C16F002B8E26 /* SceneDelegate.swift */,
+				49E010B62647CB0C002B8E26 /* Model */,
 				49E0109E2647C16F002B8E26 /* ViewController.swift */,
 				49E010A02647C16F002B8E26 /* Main.storyboard */,
 				49E010A32647C16F002B8E26 /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				49E010A82647C16F002B8E26 /* Info.plist */,
 			);
 			path = "Ask The Circle";
+			sourceTree = "<group>";
+		};
+		49E010B62647CB0C002B8E26 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49E010B32647CB04002B8E26 /* Palettes.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 				49E0109F2647C16F002B8E26 /* ViewController.swift in Sources */,
 				49E0109B2647C16F002B8E26 /* AppDelegate.swift in Sources */,
 				49E0109D2647C16F002B8E26 /* SceneDelegate.swift in Sources */,
+				49E010B42647CB04002B8E26 /* Palettes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
