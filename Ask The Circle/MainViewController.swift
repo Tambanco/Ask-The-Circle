@@ -10,7 +10,7 @@ import UIKit
 class MainViewController: UIViewController
 {
     // MARK: - Properties
-    var palette = Palettes().bluePalette
+    var palette = Palettes().darkBluePalette
     
     var gradientLayer: CAGradientLayer!
     {
@@ -28,6 +28,7 @@ class MainViewController: UIViewController
         didSet
         {
             askButton.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            askButton.setTitle("Ask me!", for: .normal)
             askButton.layer.shadowOffset = CGSize(width: 5, height: 5)
             askButton.layer.shadowOpacity = 0.5
             askButton.layer.shadowRadius = 10
@@ -41,12 +42,6 @@ class MainViewController: UIViewController
         askButton.frame = CGRect(x: self.view.bounds.size.width / 2 - 100, y: self.view.bounds.size.height / 2, width: 200, height: 200)
         askButton.layer.cornerRadius = askButton.frame.size.height / 2
         
-        let path = UIBezierPath()
-        path.move(to: CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height / 2))
-        path.addArc(withCenter: CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height / 2 + 100),
-                    radius: 100.0, startAngle: 4.71239,
-                    endAngle: 10.99558,
-                    clockwise: true)
     }
     
     override func viewDidLoad()

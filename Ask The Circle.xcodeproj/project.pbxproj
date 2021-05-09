@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49B84F672647EEB1007A6DEA /* PulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B84F662647EEB1007A6DEA /* PulseAnimation.swift */; };
+		49B84F6B2647F1FA007A6DEA /* Answers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B84F6A2647F1FA007A6DEA /* Answers.swift */; };
 		49E0109B2647C16F002B8E26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E0109A2647C16F002B8E26 /* AppDelegate.swift */; };
 		49E0109D2647C16F002B8E26 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E0109C2647C16F002B8E26 /* SceneDelegate.swift */; };
 		49E0109F2647C16F002B8E26 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E0109E2647C16F002B8E26 /* MainViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		49B84F662647EEB1007A6DEA /* PulseAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseAnimation.swift; sourceTree = "<group>"; };
+		49B84F6A2647F1FA007A6DEA /* Answers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answers.swift; sourceTree = "<group>"; };
 		49E010972647C16F002B8E26 /* Ask The Circle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ask The Circle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E0109A2647C16F002B8E26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49E0109C2647C16F002B8E26 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				49E010B32647CB04002B8E26 /* Palettes.swift */,
+				49B84F6A2647F1FA007A6DEA /* Answers.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49E0109F2647C16F002B8E26 /* MainViewController.swift in Sources */,
+				49B84F6B2647F1FA007A6DEA /* Answers.swift in Sources */,
 				49E0109B2647C16F002B8E26 /* AppDelegate.swift in Sources */,
 				49E0109D2647C16F002B8E26 /* SceneDelegate.swift in Sources */,
 				49B84F672647EEB1007A6DEA /* PulseAnimation.swift in Sources */,
