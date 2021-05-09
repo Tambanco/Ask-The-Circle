@@ -10,7 +10,12 @@ import UIKit
 class MainViewController: UIViewController
 {
     // MARK: - Properties
-    var palette = Palettes().darkBluePalette
+    var palette = Palettes().bluePalette
+    let answers = Answers().answersArray
+    let buttonTitle = "Ask me!"
+    let buttonTitleFont = UIFont.boldSystemFont(ofSize: 20)
+    var buttonSize: [CGFloat] = []
+    
     
     var gradientLayer: CAGradientLayer!
     {
@@ -27,19 +32,32 @@ class MainViewController: UIViewController
     {
         didSet
         {
-            askButton.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            askButton.setTitle("Ask me!", for: .normal)
+            askButton.backgroundColor = .clear
+            askButton.layer.borderWidth = 1
+            askButton.layer.borderColor = palette[0]
+            
+            askButton.setTitle(buttonTitle, for: .normal)
+            askButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+            askButton.titleLabel?.font = buttonTitleFont
             askButton.layer.shadowOffset = CGSize(width: 5, height: 5)
             askButton.layer.shadowOpacity = 0.5
-            askButton.layer.shadowRadius = 10
+            askButton.layer.shadowRadius = 30
         }
     }
     
     // MARK: - Life cycle
     override func viewDidLayoutSubviews()
     {
-        gradientLayer.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height)
-        askButton.frame = CGRect(x: self.view.bounds.size.width / 2 - 100, y: self.view.bounds.size.height / 2, width: 200, height: 200)
+        gradientLayer.frame = CGRect(x: 0,
+                                     y: 0,
+                                     width: self.view.bounds.size.width,
+                                     height: self.view.bounds.size.height)
+        
+        buttonSize = [200, 200]
+        askButton.frame = CGRect(x: self.view.bounds.size.width / 2 - 100,
+                                 y: self.view.bounds.size.height / 2,
+                                 width: buttonSize[0],
+                                 height: buttonSize[1])
         askButton.layer.cornerRadius = askButton.frame.size.height / 2
         
     }
@@ -54,6 +72,18 @@ class MainViewController: UIViewController
     // MARK: - Button actions
     @IBAction func askButtonPressed(_ sender: UIButton)
     {
+        configButtonAnimation(sender)
+        setAnAnswer(answers)
+        
+    }
+    
+    func setAnAnswer(_ answers: [String])
+    {
+        print(answers.randomElement())
+    }
+    
+    func configButtonAnimation(_ sender: UIButton)
+    {
         let pulse = PulseAnimation(numberOfPulse: Float.infinity, radius: 100, postion: sender.center)
         pulse.animationDuration = 1.0
         pulse.backgroundColor = palette[2]
@@ -63,6 +93,5 @@ class MainViewController: UIViewController
         pulse1.backgroundColor = palette[1]
         self.view.layer.insertSublayer(pulse1, below: self.view.layer)
     }
-    
 }
 

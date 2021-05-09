@@ -24,7 +24,7 @@ struct Palettes
                          #colorLiteral(red: 0.7215686275, green: 0.231372549, blue: 0.368627451, alpha: 1).cgColor,
                          #colorLiteral(red: 0.4156862745, green: 0.1725490196, blue: 0.4392156863, alpha: 1).cgColor]
     
-    let pinkPalette = [#colorLiteral(red: 0.9529411765, green: 0.5058823529, blue: 0.5058823529, alpha: 1).cgColor,
+    let pinkYellowPalette = [#colorLiteral(red: 0.9529411765, green: 0.5058823529, blue: 0.5058823529, alpha: 1).cgColor,
                        #colorLiteral(red: 0.9882352941, green: 0.8901960784, blue: 0.5411764706, alpha: 1).cgColor,
                        #colorLiteral(red: 0.9176470588, green: 1, blue: 0.8156862745, alpha: 1).cgColor,
                        #colorLiteral(red: 0.5843137255, green: 0.8823529412, blue: 0.8274509804, alpha: 1).cgColor]

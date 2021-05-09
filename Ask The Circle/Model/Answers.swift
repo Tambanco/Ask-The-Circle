@@ -14,6 +14,5 @@ struct Answers
                         "No",
                         "Don't Even Think About It!",
                         "Ask Again",
-                        "Ask Tommorow",
-    ]
+                        "Ask Tommorow"]
 }
