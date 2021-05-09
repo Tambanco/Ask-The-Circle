@@ -23,9 +23,17 @@ class ViewController: UIViewController
         }
     }
 
-    override func viewDidLoad() {
+    // MARK: - Life cycle
+    override func viewWillLayoutSubviews()
+    {
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height)
+    }
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        gradientLayer = CAGradientLayer()
+        view.layer.insertSublayer(gradientLayer, at: 0)
     }
 
 
