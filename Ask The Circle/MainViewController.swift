@@ -7,10 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController
+class MainViewController: UIViewController
 {
     // MARK: - Properties
-    var palette = Palettes().bluePalette
+    var palette = Palettes().darkBluePalette
     var gradientLayer: CAGradientLayer!
     {
         didSet
@@ -34,7 +34,5 @@ class ViewController: UIViewController
         gradientLayer = CAGradientLayer()
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
-
-
 }
 
