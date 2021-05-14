@@ -68,6 +68,11 @@ class MainViewController: UIViewController
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
+    func setAlert()
+    {
+        
+    }
+    
     // MARK: - Button actions
     @IBAction func askButtonPressed(_ sender: UIButton)
     {
