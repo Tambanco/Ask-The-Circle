@@ -9,5 +9,7 @@ import UIKit
 
 class AlertView: UIView
 {
-
+    @IBOutlet weak var answerLabel: UILabel!
+    @IBOutlet weak var buttonTitle: AlertButton!
+    
 }
