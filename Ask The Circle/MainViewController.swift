@@ -16,6 +16,13 @@ class MainViewController: UIViewController
     let buttonTitleFont = UIFont.boldSystemFont(ofSize: 20)
     var buttonSize: [CGFloat] = []
     
+    private lazy var alertView: AlertView =
+        {
+            let alertView: AlertView = AlertView.loadFromNib()
+            alertView.delegate = self // текущий view будет реализовывать делегата
+            return alertView
+        }()
+    
     var gradientLayer: CAGradientLayer!
     {
         didSet
@@ -68,22 +75,24 @@ class MainViewController: UIViewController
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    func setAlert()
-    {
-        
-    }
-    
     // MARK: - Button actions
     @IBAction func askButtonPressed(_ sender: UIButton)
     {
         configButtonAnimation(sender)
-        setAnAnswer(answers)
+        setAlert()
         
     }
     
-    func setAnAnswer(_ answers: [String])
+    func setAlert()
     {
-        print(answers.randomElement() ?? "No")
+        view.addSubview(alertView)
+        alertView.center = view.center
+        alertView.set(answer: setAnAnswer(answers), buttonText: "More answers")
+    }
+    
+    func setAnAnswer(_ answers: [String]) -> String
+    {
+        return answers.randomElement() ?? "No"
     }
     
     func configButtonAnimation(_ sender: UIButton)
@@ -97,5 +106,14 @@ class MainViewController: UIViewController
         pulse1.backgroundColor = palette[1]
         self.view.layer.insertSublayer(pulse1, below: self.view.layer)
     }
+}
+
+extension MainViewController: AlertDelagate
+{
+    func buttonTapped()
+    {
+        print("fdff")
+    }
+
 }
 

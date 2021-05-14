@@ -18,7 +18,7 @@ class AlertView: UIView
     @IBOutlet weak var buttonTitle: AlertButton!
     
     var delegate: AlertDelagate?
-
+    
     func set(answer: String, buttonText: String)
     {
         answerLabel.text = answer
