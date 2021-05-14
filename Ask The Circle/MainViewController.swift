@@ -112,7 +112,7 @@ extension MainViewController: AlertDelagate
 {
     func buttonTapped()
     {
-        print("fdff")
+        self.alertView.removeFromSuperview()
     }
 
 }
