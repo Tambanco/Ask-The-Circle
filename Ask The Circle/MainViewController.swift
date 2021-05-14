@@ -23,6 +23,14 @@ class MainViewController: UIViewController
             return alertView
         }()
     
+    let visualEffectView: UIVisualEffectView =
+        {
+            let blurEffect = UIBlurEffect(style: .dark)
+            let view = UIVisualEffectView(effect: blurEffect)
+            view.translatesAutoresizingMaskIntoConstraints = false
+            return view
+        }()
+    
     var gradientLayer: CAGradientLayer!
     {
         didSet
@@ -80,6 +88,7 @@ class MainViewController: UIViewController
     {
         configButtonAnimation(sender)
         setAlert()
+        animateIn()
         
     }
     
@@ -106,14 +115,38 @@ class MainViewController: UIViewController
         pulse1.backgroundColor = palette[1]
         self.view.layer.insertSublayer(pulse1, below: self.view.layer)
     }
+    
+    func animateIn()
+    {
+        alertView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        alertView.alpha = 0
+        
+        UIView.animate(withDuration: 0.4)
+        {
+            self.visualEffectView.alpha = 1
+            self.alertView.alpha = 1
+            self.alertView.transform = CGAffineTransform.identity
+        }
+    }
+    
+    func animateOut()
+    {
+        UIView.animate(withDuration: 0.4,
+                       animations: {
+                        self.visualEffectView.alpha = 0
+                        self.alertView.alpha = 0
+                        self.alertView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+                       }) { (_) in
+            self.alertView.removeFromSuperview()
+        }
+    }
 }
 
 extension MainViewController: AlertDelagate
 {
     func buttonTapped()
     {
-        self.alertView.removeFromSuperview()
+        animateOut()
     }
-
 }
 
