@@ -16,11 +16,10 @@ class MainViewController: UIViewController
     let buttonTitleFont = UIFont.boldSystemFont(ofSize: 20)
     var buttonSize: [CGFloat] = []
     
-    
     var gradientLayer: CAGradientLayer!
     {
         didSet
-        {
+        { 
             gradientLayer.startPoint = CGPoint(x: 0, y: 0)
             gradientLayer.endPoint = CGPoint(x: 1, y: 1)
             gradientLayer.colors = [palette[0], palette[1], palette[2], palette[3]]
@@ -79,7 +78,7 @@ class MainViewController: UIViewController
     
     func setAnAnswer(_ answers: [String])
     {
-        print(answers.randomElement())
+        print(answers.randomElement() ?? "No")
     }
     
     func configButtonAnimation(_ sender: UIButton)
