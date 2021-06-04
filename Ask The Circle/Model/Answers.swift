@@ -8,12 +8,12 @@
 import UIKit
 
 enum Answers {
-    static let answersArray = ["Yes",
-                        "Of Course Yes!",
-                        "No",
-                        "Don't Even Think About It!",
-                        "Ask Again",
-                        "Ask Tommorow"]
+//    static let answersArray = ["Yes",
+//                        "Of Course Yes!",
+//                        "No",
+//                        "Don't Even Think About It!",
+//                        "Ask Again",
+//                        "Ask Tommorow"]
     static let yes = "Yes"
     static let ofCourseYes = "Of Course Yes!"
     static let no = "No"

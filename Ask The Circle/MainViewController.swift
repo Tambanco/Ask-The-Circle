@@ -7,8 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController
-{
+class MainViewController: UIViewController {
     // MARK: - Properties
     var palette = Palettes.darkBluePalette
     let answers = Answers.yes
@@ -104,7 +103,7 @@ class MainViewController: UIViewController
     {
         view.addSubview(alertView)
         alertView.center = view.center
-        alertView.set(answer: setAnAnswer(answers), buttonText: "More answers")
+        alertView.set(answer: setAnAnswer([Answers.yes]), buttonText: "More answers")
     }
     
     func setAnAnswer(_ answers: [String]) -> String
