@@ -11,7 +11,7 @@ class MainViewController: UIViewController
 {
     // MARK: - Properties
     var palette = Palettes.darkBluePalette
-    let answers = Answers().answersArray
+    let answers = Answers.yes
     let buttonTitle = "Ask me!"
     let buttonTitleFont = UIFont.boldSystemFont(ofSize: 20)
     var buttonSize: [CGFloat] = []
