@@ -10,7 +10,7 @@ import UIKit
 class MainViewController: UIViewController
 {
     // MARK: - Properties
-    var palette = Palettes().bluePalette
+    var palette = Palettes.darkBluePalette
     let answers = Answers().answersArray
     let buttonTitle = "Ask me!"
     let buttonTitleFont = UIFont.boldSystemFont(ofSize: 20)
@@ -19,7 +19,7 @@ class MainViewController: UIViewController
     private lazy var alertView: AlertView =
         {
             let alertView: AlertView = AlertView.loadFromNib()
-            alertView.delegate = self // текущий view будет реализовывать делегата
+            alertView.delegate = self
             return alertView
         }()
     
@@ -49,7 +49,6 @@ class MainViewController: UIViewController
             askButton.backgroundColor = .clear
             askButton.layer.borderWidth = 1
             askButton.layer.borderColor = palette[0]
-            
             askButton.setTitle(buttonTitle, for: .normal)
             askButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
             askButton.titleLabel?.font = buttonTitleFont
@@ -73,23 +72,32 @@ class MainViewController: UIViewController
                                  width: buttonSize[0],
                                  height: buttonSize[1])
         askButton.layer.cornerRadius = askButton.frame.size.height / 2
-        
     }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        setupVisualEffectView()
         gradientLayer = CAGradientLayer()
         view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    func setupVisualEffectView()
+    {
+        view.addSubview(visualEffectView)
+        visualEffectView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        visualEffectView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        visualEffectView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        visualEffectView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        visualEffectView.alpha = 0
     }
     
     // MARK: - Button actions
     @IBAction func askButtonPressed(_ sender: UIButton)
     {
-        configButtonAnimation(sender)
+//        configButtonAnimation(sender)
         setAlert()
         animateIn()
-        
     }
     
     func setAlert()
@@ -104,17 +112,17 @@ class MainViewController: UIViewController
         return answers.randomElement() ?? "No"
     }
     
-    func configButtonAnimation(_ sender: UIButton)
-    {
-        let pulse = PulseAnimation(numberOfPulse: Float.infinity, radius: 100, postion: sender.center)
-        pulse.animationDuration = 1.0
-        pulse.backgroundColor = palette[2]
-        self.view.layer.insertSublayer(pulse, below: self.view.layer)
-        let pulse1 = PulseAnimation(numberOfPulse: 15, radius: 200, postion: sender.center)
-        pulse1.animationDuration = 1.4
-        pulse1.backgroundColor = palette[1]
-        self.view.layer.insertSublayer(pulse1, below: self.view.layer)
-    }
+//    func configButtonAnimation(_ sender: UIButton)
+//    {
+//        let pulse = PulseAnimation(numberOfPulse: Float.infinity, radius: 100, postion: sender.center)
+//        pulse.animationDuration = 1.0
+//        pulse.backgroundColor = palette[2]
+//        self.view.layer.insertSublayer(pulse, below: self.view.layer)
+//        let pulse1 = PulseAnimation(numberOfPulse: 15, radius: 200, postion: sender.center)
+//        pulse1.animationDuration = 1.4
+//        pulse1.backgroundColor = palette[1]
+//        self.view.layer.insertSublayer(pulse1, below: self.view.layer)
+//    }
     
     func animateIn()
     {
